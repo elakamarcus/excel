@@ -1,0 +1,15 @@
+Formulas for breaking up surename, initial and given name.
+
+B                             C           D         E
+Name	                        First	      Initials	Last
+Svensson, Karl	              Karl		              Svensson
+Leung, Cheung Yin	            Cheung Yin		        Leung
+Lauren Andersson, Marcus L.M.	Marcus 	    L.M.	    Lauren Andersson
+			
+
+Code for the column First (column C):
+	.MID(B5,FIND(",", B5)+2,LEN(B5)-LEN(D5)-LEN(E5)-2)	
+Code for the column Initials (column D):
+  .RIGHT(B5,LEN(B5)-FIND(".",B5)+2)
+Code for the column Last (column E):
+  .LEFT(B4,FIND(",",B4)-1)
